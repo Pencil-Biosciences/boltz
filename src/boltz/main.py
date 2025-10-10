@@ -319,13 +319,13 @@ def check_inputs(data: Path) -> list[Path]:
         return data_files
 
     # Single file case
-    else:
-        if data.suffix.lower() not in valid_exts:
-            raise RuntimeError(
-                f"Unable to parse filetype {data.suffix}, "
-                "please provide a .fasta or .yaml file."
-            )
-        return [data]
+    # else:
+    if data.suffix.lower() not in valid_exts:
+        raise RuntimeError(
+            f"Unable to parse filetype {data.suffix}, "
+            "please provide a .fasta or .yaml file."
+        )
+    return [data]
 
 
 def filter_inputs_structure(
